@@ -1,0 +1,122 @@
+.about-section {
+  width: var(--cWidth);
+  margin: auto;
+  max-width: 1400px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+  background: transparent;
+  backdrop-filter: none;
+  padding: 100px 0;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* About Me Card (Right Side) */
+.about-me {
+  width: 100%;
+  max-width: 620px;
+  pointer-events: auto;
+  position: relative;
+  z-index: 5;
+  background: rgba(10, 14, 23, 0.72);
+  border: 1px solid rgba(94, 234, 212, 0.15);
+  border-radius: 20px;
+  padding: 44px 48px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(94, 234, 212, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.about-me::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradientPrimary, linear-gradient(90deg, #5eead4, #818cf8));
+  opacity: 0.8;
+}
+
+.about-me:hover {
+  border-color: rgba(94, 234, 212, 0.3);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55), 0 0 40px rgba(94, 234, 212, 0.1);
+}
+
+/* Header */
+.about-header {
+  margin-bottom: 24px;
+}
+
+.about-header .section-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--accentColor, #5eead4);
+  margin-bottom: 8px;
+}
+
+.about-header h2 {
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 6px 0 0 0;
+  letter-spacing: -0.5px;
+  color: #f1f5f9;
+}
+
+.about-header h2 .accent {
+  background: var(--gradientPrimary, linear-gradient(90deg, #5eead4, #818cf8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Bio paragraphs */
+.about-bio {
+  color: var(--textSecondary, #b4bdc8);
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 16px 0;
+}
+
+.about-bio:last-child {
+  margin-bottom: 0;
+}
+
+.about-bio .accent {
+  color: var(--accentColor, #5eead4);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .about-section {
+    min-height: auto;
+    padding: 80px 0;
+    justify-content: center;
+    pointer-events: auto;
+  }
+
+  .about-me {
+    max-width: 100%;
+    padding: 32px 24px;
+  }
+
+  .about-header h2 {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .about-me {
+    max-width: 660px;
+    padding: 48px 52px;
+  }
+}
